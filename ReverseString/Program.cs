@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 
-namespace Samples
+namespace ReverseString
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            
-
+            Console.WriteLine("Hello World!");
         }
     }
 }
