@@ -7,12 +7,22 @@ namespace ExceptionsEx
     {
         static void Main(string[] args)
         {
+            int i = 0;
+            if(int.TryParse("1234", out i))
+            {
+                Console.WriteLine("Parsed i = " + i);
+            }
+            else
+            {
+                Console.WriteLine("Not Parsed i = " + i);
+            }
+            
             // 1, 5, 7, 9, 3, 4
             string input = null;
             try
             {
                 Console.WriteLine("1");
-                Sub1();
+                //Sub1();
                 Console.WriteLine("2");
             }
             catch (Exception ex)

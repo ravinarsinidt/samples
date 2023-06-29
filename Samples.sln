@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionsEx", "ExceptionsE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackEx", "StackEx\StackEx.csproj", "{58BB2BD2-2050-4CCC-9656-C7F82B4D26ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseString", "ReverseString\ReverseString.csproj", "{0403934D-E1F3-41CF-BC4F-9230BD9FF623}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReverseString", "ReverseString\ReverseString.csproj", "{0403934D-E1F3-41CF-BC4F-9230BD9FF623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstarctEx", "AbstarctEx\AbstarctEx.csproj", "{06CB7593-6B1E-4038-8561-FB3BDEC407D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceEx", "InterfaceEx\InterfaceEx.csproj", "{07A0FCBE-D433-4B31-9745-BF3538030C74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{0403934D-E1F3-41CF-BC4F-9230BD9FF623}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0403934D-E1F3-41CF-BC4F-9230BD9FF623}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0403934D-E1F3-41CF-BC4F-9230BD9FF623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CB7593-6B1E-4038-8561-FB3BDEC407D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CB7593-6B1E-4038-8561-FB3BDEC407D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CB7593-6B1E-4038-8561-FB3BDEC407D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CB7593-6B1E-4038-8561-FB3BDEC407D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A0FCBE-D433-4B31-9745-BF3538030C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A0FCBE-D433-4B31-9745-BF3538030C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A0FCBE-D433-4B31-9745-BF3538030C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A0FCBE-D433-4B31-9745-BF3538030C74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
