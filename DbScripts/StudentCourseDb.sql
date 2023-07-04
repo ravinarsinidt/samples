@@ -1,0 +1,20 @@
+CREATE TABLE Student
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	Name VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE Course
+(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	Name VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE StudentCourse
+(
+	StudentId INT NOT NULL,
+	CourseId INT NOT NULL,
+	CONSTRAINT FK_Student_StudentId FOREIGN KEY (StudentId) REFERENCES dbo.Student(Id),
+	CONSTRAINT FK_Course_CourseId FOREIGN KEY (CourseId) REFERENCES dbo.Course(Id)
+
+)

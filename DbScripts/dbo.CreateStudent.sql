@@ -1,0 +1,20 @@
+DROP PROCEDURE IF EXISTS dbo.CreateStudent
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE dbo.CreateStudent
+(
+)
+AS
+BEGIN
+    BEGIN TRY
+        
+        
+    END TRY
+    BEGIN CATCH
+        THROW
+    END CATCH
+END
+GO
