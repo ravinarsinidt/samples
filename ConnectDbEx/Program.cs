@@ -14,6 +14,7 @@ namespace ConnectDbEx
                 SqlDataReader rdr = null;
                 conn.Open();
                 rdr = cmd.ExecuteReader();
+                cmd.CommandTimeout = 0;
                 while (rdr.Read())
                 {
                     Console.WriteLine("Id : " + rdr[0]);
