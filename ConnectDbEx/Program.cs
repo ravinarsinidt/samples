@@ -7,7 +7,7 @@ namespace ConnectDbEx
     {
         static void Main(string[] args)
         {
-            SelectUsingAdapter.Select();
+            ReadMultiple.Select();
         }
     }
 }

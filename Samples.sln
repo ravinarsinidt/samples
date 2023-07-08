@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstarctEx", "AbstarctEx\Ab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceEx", "InterfaceEx\InterfaceEx.csproj", "{07A0FCBE-D433-4B31-9745-BF3538030C74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectDbEx", "ConnectDbEx\ConnectDbEx.csproj", "{7813D6B9-4C54-4179-A1A0-4C96E0D16A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectDbEx", "ConnectDbEx\ConnectDbEx.csproj", "{7813D6B9-4C54-4179-A1A0-4C96E0D16A6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentMgmt", "StudentMgmt\StudentMgmt.csproj", "{88AD431E-87EA-4A90-9C50-6AD96C30AEDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{7813D6B9-4C54-4179-A1A0-4C96E0D16A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7813D6B9-4C54-4179-A1A0-4C96E0D16A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7813D6B9-4C54-4179-A1A0-4C96E0D16A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88AD431E-87EA-4A90-9C50-6AD96C30AEDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88AD431E-87EA-4A90-9C50-6AD96C30AEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88AD431E-87EA-4A90-9C50-6AD96C30AEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88AD431E-87EA-4A90-9C50-6AD96C30AEDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
