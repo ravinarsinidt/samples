@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33530.505
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples", "Samples\Samples.csproj", "{B4ABC25D-FBB6-4609-9C7D-195231BD5B81}"
 EndProject
@@ -17,17 +17,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceEx", "InterfaceEx\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectDbEx", "ConnectDbEx\ConnectDbEx.csproj", "{7813D6B9-4C54-4179-A1A0-4C96E0D16A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentMgmt", "StudentMgmt\StudentMgmt.csproj", "{88AD431E-87EA-4A90-9C50-6AD96C30AEDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentMgmt", "StudentMgmt\StudentMgmt.csproj", "{88AD431E-87EA-4A90-9C50-6AD96C30AEDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertiesEx", "PropertiesEx\PropertiesEx.csproj", "{DB9B23EB-3F60-496B-8316-77DFC5CF7195}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertiesEx", "PropertiesEx\PropertiesEx.csproj", "{DB9B23EB-3F60-496B-8316-77DFC5CF7195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternalEx", "InternalEx\InternalEx.csproj", "{FCBFF38E-F277-42FE-82C6-95949CCA53AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternalEx", "InternalEx\InternalEx.csproj", "{FCBFF38E-F277-42FE-82C6-95949CCA53AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorEx", "CalculatorEx\CalculatorEx.csproj", "{D4727A32-7705-474A-B7A4-E59F52CA97FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorEx", "CalculatorEx\CalculatorEx.csproj", "{D4727A32-7705-474A-B7A4-E59F52CA97FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadEx", "ThreadEx\ThreadEx.csproj", "{E25AE114-5FDA-412B-BB44-E2BE1A98D114}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadEx", "ThreadEx\ThreadEx.csproj", "{E25AE114-5FDA-412B-BB44-E2BE1A98D114}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwaitEx", "AsyncAwaitEx\AsyncAwaitEx.csproj", "{61A60215-2EFC-403B-B728-D5A9A5EE4992}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwaitEx", "AsyncAwaitEx\AsyncAwaitEx.csproj", "{61A60215-2EFC-403B-B728-D5A9A5EE4992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesEx", "DelegatesEx\DelegatesEx.csproj", "{35317D49-713B-4D81-A930-8DCADF79E848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqEx", "LinqEx\LinqEx.csproj", "{111BBED0-550E-45AB-BE58-F3E2901E90C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,14 @@ Global
 		{61A60215-2EFC-403B-B728-D5A9A5EE4992}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61A60215-2EFC-403B-B728-D5A9A5EE4992}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61A60215-2EFC-403B-B728-D5A9A5EE4992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35317D49-713B-4D81-A930-8DCADF79E848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35317D49-713B-4D81-A930-8DCADF79E848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35317D49-713B-4D81-A930-8DCADF79E848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35317D49-713B-4D81-A930-8DCADF79E848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111BBED0-550E-45AB-BE58-F3E2901E90C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111BBED0-550E-45AB-BE58-F3E2901E90C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111BBED0-550E-45AB-BE58-F3E2901E90C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111BBED0-550E-45AB-BE58-F3E2901E90C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
