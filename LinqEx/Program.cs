@@ -9,27 +9,51 @@ namespace LinqEx
         static void Main(string[] args)
         {
             List<Student> students = CreateStudents();
-            List<Student> studentsWithS = GetStudentsNameStartWithLetterS(students);
-            Console.WriteLine("Students with Letter Starts with 'S'");
-            PrintStudentData(studentsWithS);
-            List<Student> topStudents = GetStudentsWithTopMarks(students);
-            Console.WriteLine("Top Students");
-            PrintStudentData(topStudents);
+            //List<Student> studentsWithS = GetStudentsNameStartWithLetterS(students);
+            //Console.WriteLine("Students with Letter Starts with 'S'");
+            //PrintStudentData(studentsWithS);
+            //List<Student> topStudents = GetStudentsWithTopMarks(students);
+            //Console.WriteLine("Top Students");
+            //PrintStudentData(topStudents);
+
+            IEnumerable<Student> studentsWithS = from s in students
+                                          where s.Name.StartsWith('S')
+                                          select s;
+
+            List<Student> studentsWithS2 = students.Where((s) => s.Name.StartsWith('S')).ToList();
+
+            string[] MySkills = {
+                "C#.net",
+                "Asp.net",
+                "MVC",
+                "Linq",
+                "EntityFramework",
+                "Swagger",
+                "Web-Api",
+                "OrcharCMS",
+                "Jquery",
+                "Sqlserver",
+                "Docusign"
+            };
+            string commaSeperatedString = MySkills.Aggregate((s1, s2) => s1 + ", " + s2);
+            Console.WriteLine("Aggregate : " + commaSeperatedString);
+
+
         }
         private static List<Student> GetStudentsWithTopMarks(List<Student> students)
         {
             List<Student> topStudents = new List<Student>();
             int top = -1;
 
-            foreach (var student in students)
+            foreach (Student student in students)
             {
-                if(student.Marks > top)
+                if (student.Marks > top)
                 {
                     top = student.Marks;
                 }
             }
 
-            foreach (var student in students)
+            foreach (Student student in students)
             {
                 if (student.Marks == top)
                 {
