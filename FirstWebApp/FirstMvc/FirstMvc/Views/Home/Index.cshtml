@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Get Form</p>
+    <form action="index" method="get">
+        <input type="text" name="UserName" />
+        <input type="password" name="Password" />
+        <button type="submit" name="btnSubmitGet">Submit Get</button>
+    </form>
+    <br />
+    <p>Get Form</p>
+    <form action="index" method="delete">
+        <input type="text" name="id" />
+        <button type="submit" name="btnSubmitGet">Delete</button>
+    </form>
+    <br />
+    <p>Post Form</p>
+    <form action="IndexPost" method="post">
+        <input type="text" name="UserName" />
+        <button type="submit" name="btnSubmitGet">Submit Get</button>
+    </form>
+</div>
