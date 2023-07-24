@@ -1,6 +1,7 @@
 ﻿using BankingEx.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using BankingEx.Models;
 
 namespace BankingEx.Controllers
 {
@@ -11,42 +12,21 @@ namespace BankingEx.Controllers
             return View();
         }
 
-        public IActionResult ContentData()
+        public IActionResult ContentData(int id)
         {
-            return Content("Hi Ravi Kumar");
-        }
-
-        public IActionResult JsonData()
-        {
-            Customer customer = new Customer
+            if(GenderEnum.Male == (GenderEnum)id)
             {
-                Id = 1,
-                Name = "Test",
-            };
-
-            //Tranform it to Json object
-            string customerData = JsonConvert.SerializeObject(customer);
-            return Json(customerData);
-        }
-
-        public IActionResult FileData()
-        {
-            return File("/SampleFile.json", "application/json", "myfile.json");
-        }
-
-        public IActionResult GoToHome()
-        {
-            return Redirect("/home/index");
-        }
-
-        public IActionResult GoToAction()
-        {
-            return RedirectToAction("JsonData");
-        }
-
-        public IActionResult PartialViewData()
-        {
-            return PartialView();
+                return Content("He is Male");
+            }
+            else if((int)GenderEnum.Female == id)
+            {
+                return Content("He is Female");
+            }
+            else
+            {
+                return Content("He is 3rd Gender");
+            }
+            
         }
     }
 }
