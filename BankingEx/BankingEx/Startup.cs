@@ -50,7 +50,7 @@ namespace BankingEx
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=home}/{action=index}/{id?}");
+                    pattern: "{controller=customer}/{action=List}/{id?}");
             });
         }
     }
