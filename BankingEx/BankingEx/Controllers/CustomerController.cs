@@ -32,5 +32,11 @@ namespace BankingEx.Controllers
             List<Customer> customers = CustomerContext.GetCustomers();
             return View(customers);
         }
+
+        [HttpGet]
+        public IActionResult Test()
+        {
+            return View();
+        }
     }
 }

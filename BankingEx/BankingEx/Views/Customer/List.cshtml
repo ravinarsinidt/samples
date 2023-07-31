@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BankingEx.Models.Customer>
+﻿@model IEnumerable<Customer>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -7,41 +7,52 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DoB)
+                DOB
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PAN)
+                PAN
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.City)
+                City
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+        @{
+            int x = 10;                        
+        }
+
         @foreach (var item in Model)
-        {
+        {            
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Id)
+                    @if (x > 10)
+                    {
+                        <label>@item.Id</label>
+                    }
+                    else
+                    {
+                        <label>@@Test Value</label>
+                    }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    <label>@item.Name</label>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DoB)
+                    <label>@item.DoB</label>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PAN)
+                    <label>@item.PAN</label>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.City)
+                    <label>@item.City</label>
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

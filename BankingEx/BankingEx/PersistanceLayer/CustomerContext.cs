@@ -59,6 +59,7 @@ namespace BankingEx.PersistanceLayer
                     customer.Id = int.Parse(resultReader["Id"].ToString());
                     customer.Name = resultReader["Name"].ToString();
                     customer.DoB = DateTime.Parse(resultReader["Dob"].ToString());
+                    customer.PAN = resultReader["PanNumber"].ToString();
                     customer.City = resultReader["City"].ToString();
 
                     customers.Add(customer);
