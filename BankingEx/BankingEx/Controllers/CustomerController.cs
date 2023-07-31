@@ -1,5 +1,5 @@
-﻿using BankingEx.Models;
-using BankingEx.PersistanceLayer;
+﻿using BankingEx.EFModels;
+using BankingEx.EFPersistanceLayer;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace BankingEx.Controllers
         [HttpPost]
         public IActionResult Create(Customer customer)
         {
-            bool isSuccess = CustomerContext.Create(customer);
+            bool isSuccess = EFCustomerContext.Create(customer);
             if (isSuccess)
             {
                 return RedirectToAction("List");
@@ -29,7 +29,7 @@ namespace BankingEx.Controllers
         [HttpGet]
         public IActionResult List()
         {
-            List<Customer> customers = CustomerContext.GetCustomers();
+            List<Customer> customers = EFCustomerContext.GetCustomers();
             return View(customers);
         }
 

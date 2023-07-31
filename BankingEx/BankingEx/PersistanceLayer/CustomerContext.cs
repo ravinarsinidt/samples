@@ -14,7 +14,7 @@ namespace BankingEx.PersistanceLayer
             try
             {
                 string dbDateFormat = customer.DoB.ToString("yyyy-MM-dd");
-                string insertCommand = $"INSERT INTO dbo.Customer(name, Dob, PanNumber, City) " +
+                string insertCommand = $"INSERT INTO dbo.Customer(name, Dobs, PanNumber, City) " +
                                         $"VALUES('{customer.Name}', '{dbDateFormat}', '{customer.PAN}'" +
                                         $", '{customer.City}')";
                 SqlCommand command = new SqlCommand(insertCommand, connection);

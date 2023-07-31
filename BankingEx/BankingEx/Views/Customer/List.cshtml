@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Customer>
+﻿@model IEnumerable<BankingEx.EFModels.Customer>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -26,30 +26,23 @@
     </thead>
     <tbody>
         @{
-            int x = 10;                        
+            int x = 10;
         }
 
         @foreach (var item in Model)
-        {            
+        {
             <tr>
                 <td>
-                    @if (x > 10)
-                    {
-                        <label>@item.Id</label>
-                    }
-                    else
-                    {
-                        <label>@@Test Value</label>
-                    }
+                    <label>@item.Id</label>
                 </td>
                 <td>
                     <label>@item.Name</label>
                 </td>
                 <td>
-                    <label>@item.DoB</label>
+                    <label>@item.Dob</label>
                 </td>
                 <td>
-                    <label>@item.PAN</label>
+                    <label>@item.PanNumber</label>
                 </td>
                 <td>
                     <label>@item.City</label>
