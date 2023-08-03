@@ -34,9 +34,29 @@ namespace BankingEx.Controllers
         }
 
         [HttpGet]
-        public IActionResult Test()
+        public IActionResult Edit(int id) 
         {
-            return View();
+            Customer customer = EFCustomerContext.GetCustomerById(id);
+            return View(customer);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Customer customer)
+        {
+            try
+            {
+                bool success = EFCustomerContext.UpdateCustomer(customer);
+                if (success)
+                {
+                    return RedirectToAction("List");
+                }
+                ViewBag.ErrorMessage = "Record not updated. Pls try again.";            
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = "Record not updated. Exception : " + ex.Message; 
+            }
+            return View(customer);
         }
     }
 }
