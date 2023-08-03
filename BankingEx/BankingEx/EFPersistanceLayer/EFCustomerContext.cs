@@ -40,8 +40,7 @@ namespace BankingEx.EFPersistanceLayer
                 optionsBuilder.UseSqlServer(connectionString);
 
                 AudreeBankContext db = new AudreeBankContext(optionsBuilder.Options);
-                var x = db.Customers;
-                List <Customer> customers = x.ToList();
+                List <Customer> customers = db.Customers.ToList();
                 return customers;
 
             }
@@ -79,6 +78,27 @@ namespace BankingEx.EFPersistanceLayer
                 optionsBuilder.UseSqlServer(connectionString);
                 AudreeBankContext db = new AudreeBankContext(optionsBuilder.Options);
                 db.Customers.Update(customer);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        internal static bool Delete(int id)
+        {
+            string connectionString = "Server=RAVINARSINI;Database=AudreeBank;User Id=sa;Password=adminadmin;encrypt=false";
+
+            try
+            {
+                DbContextOptionsBuilder<AudreeBankContext> optionsBuilder = new DbContextOptionsBuilder<AudreeBankContext>();
+                optionsBuilder.UseSqlServer(connectionString);
+                AudreeBankContext db = new AudreeBankContext(optionsBuilder.Options);
+
+                Customer customer = db.Customers.Find(id);
+                db.Customers.Remove(customer);
                 db.SaveChanges();
                 return true;
             }

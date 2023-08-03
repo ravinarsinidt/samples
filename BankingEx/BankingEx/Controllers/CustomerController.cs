@@ -34,7 +34,7 @@ namespace BankingEx.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id) 
+        public IActionResult Edit(int id)
         {
             Customer customer = EFCustomerContext.GetCustomerById(id);
             return View(customer);
@@ -50,13 +50,31 @@ namespace BankingEx.Controllers
                 {
                     return RedirectToAction("List");
                 }
-                ViewBag.ErrorMessage = "Record not updated. Pls try again.";            
+                ViewBag.ErrorMessage = "Record not updated. Pls try again.";
             }
             catch (Exception ex)
             {
-                ViewBag.ErrorMessage = "Record not updated. Exception : " + ex.Message; 
+                ViewBag.ErrorMessage = "Record not updated. Exception : " + ex.Message;
             }
             return View(customer);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Customer customer = EFCustomerContext.GetCustomerById(id);
+            return View(customer);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Customer customer)
+        {
+            bool isDeleted = EFCustomerContext.Delete(customer.Id);
+            if (isDeleted)
+            {
+                ViewBag.ErrorMessage = "Record not deleted! Please try again.";
+            }
+            return RedirectToAction("List");
         }
     }
 }
