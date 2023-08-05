@@ -34,6 +34,7 @@ namespace BankingEx.Controllers
         }
 
         [HttpGet]
+        [AutoValidateAntiforgeryToken]
         public IActionResult Edit(int id)
         {
             Customer customer = EFCustomerContext.GetCustomerById(id);
@@ -41,6 +42,7 @@ namespace BankingEx.Controllers
         }
 
         [HttpPost]
+        [AutoValidateAntiforgeryToken]
         public IActionResult Edit(Customer customer)
         {
             try
@@ -75,6 +77,13 @@ namespace BankingEx.Controllers
                 ViewBag.ErrorMessage = "Record not deleted! Please try again.";
             }
             return RedirectToAction("List");
+        }
+
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            Customer customer = EFCustomerContext.GetCustomerById(id);
+            return View(customer);
         }
     }
 }

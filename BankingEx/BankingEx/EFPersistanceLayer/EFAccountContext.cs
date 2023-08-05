@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using BankingEx.EFModels;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Reflection.Metadata;
 
 namespace BankingEx.EFPersistanceLayer
 {
-    public class EFCustomerContext
+    public class EFAccountContext
     {
-        public static bool Create(Customer customer)
+        public static bool Create(Account account)
         {
             string connectionString = "Server=RAVINARSINI;Database=AudreeBank;User Id=sa;Password=adminadmin;encrypt=false";
 
@@ -19,7 +20,7 @@ namespace BankingEx.EFPersistanceLayer
                 optionsBuilder.UseSqlServer(connectionString);
                 AudreeBankContext db = new AudreeBankContext(optionsBuilder.Options);
 
-                db.Customers.Add(customer);
+                db.Accounts.Add(account);
                 db.SaveChanges();
                 return true;
 
@@ -30,7 +31,7 @@ namespace BankingEx.EFPersistanceLayer
             }
         }
 
-        public static List<Customer> GetCustomers()
+        public static List<Account> GetAccounts()
         {
             string connectionString = "Server=RAVINARSINI;Database=AudreeBank;User Id=sa;Password=adminadmin;encrypt=false";
 
@@ -40,8 +41,8 @@ namespace BankingEx.EFPersistanceLayer
                 optionsBuilder.UseSqlServer(connectionString);
 
                 AudreeBankContext db = new AudreeBankContext(optionsBuilder.Options);
-                List <Customer> customers = db.Customers.ToList();
-                return customers;
+                List <Account> accounts = db.Accounts.ToList();
+                return accounts;
 
             }
             catch (Exception ex)
@@ -50,7 +51,7 @@ namespace BankingEx.EFPersistanceLayer
             }
         }
 
-        public static Customer GetCustomerById(int id)
+        public static Account GetAccountById(int id)
         {
             string connectionString = "Server=RAVINARSINI;Database=AudreeBank;User Id=sa;Password=adminadmin;encrypt=false";
 
@@ -59,8 +60,9 @@ namespace BankingEx.EFPersistanceLayer
                 DbContextOptionsBuilder<AudreeBankContext> optionsBuilder = new DbContextOptionsBuilder<AudreeBankContext>();
                 optionsBuilder.UseSqlServer(connectionString);
                 AudreeBankContext db = new AudreeBankContext(optionsBuilder.Options);
-                Customer customer = db.Customers.Find(id);
-                return customer;
+                Account account = db.Accounts.Find(id);
+                db.Entry(account).Reference(b => b.Customer).Load();
+                return account;
             }
             catch (Exception ex)
             {
@@ -68,7 +70,7 @@ namespace BankingEx.EFPersistanceLayer
             }
         }
 
-        internal static bool UpdateCustomer(Customer customer)
+        internal static bool UpdateAccount(Account account)
         {
             string connectionString = "Server=RAVINARSINI;Database=AudreeBank;User Id=sa;Password=adminadmin;encrypt=false";
 
@@ -77,7 +79,7 @@ namespace BankingEx.EFPersistanceLayer
                 DbContextOptionsBuilder<AudreeBankContext> optionsBuilder = new DbContextOptionsBuilder<AudreeBankContext>();
                 optionsBuilder.UseSqlServer(connectionString);
                 AudreeBankContext db = new AudreeBankContext(optionsBuilder.Options);
-                db.Customers.Update(customer);
+                db.Accounts.Update(account);
                 db.SaveChanges();
                 return true;
             }
@@ -97,12 +99,13 @@ namespace BankingEx.EFPersistanceLayer
                 optionsBuilder.UseSqlServer(connectionString);
                 AudreeBankContext db = new AudreeBankContext(optionsBuilder.Options);
 
-                Customer customer = db.Customers.Find(id);
-                if(customer != null)
+                Account account = db.Accounts.Find(id);
+                if(account != null)
                 {
-                    db.Customers.Remove(customer);
+                    db.Accounts.Remove(account);
                     db.SaveChanges();
-                }                
+                }
+                
                 return true;
             }
             catch (Exception ex)

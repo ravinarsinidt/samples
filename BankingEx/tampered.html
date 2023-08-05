@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> - BankingEx</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="/Home/Index">BankingEx</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/">Customers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Account">Accounts</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            
+<h4>Customer</h4>
+<hr />
+<<div class="row">
+    <div class="col-md-4">
+        <span></span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form action="https://localhost:44394/customer/Edit/7" method="post">
+            
+            <div class="form-group">
+                <label class="control-label" for="Name">Name</label>
+                <input name="Name" value="Rahul" class="form-control" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Dob">Dob</label>
+                <input class="form-control" type="datetime-local" data-val="true" data-val-required="The Dob field is required." id="Dob" name="Dob" value="2023-05-30T00:00:00.000" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Dob" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="PanNumber">PanNumber</label>
+                <input class="form-control" type="text" id="PanNumber" name="PanNumber" value="9898989" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="PanNumber" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="City">City</label>
+                <input class="form-control" type="text" id="City" name="City" value="Bangalore1" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="City" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8MRhK-uB5YdGsxHyRbQUx4uRA4MNdLMpNL4BzFM3dMxSmylQJthQ8-lB0B_-MHyFXyraO90unWDRM-kbPJAYaay2xC0RfKmmTmIZVNOqQWAido5d27CoRcyHGm2ktddQ9EqhnZEzybpvv7ySINKQAdA" /></form>
+    </div>
+</div>
+
+<div>
+    <a href="/customer/Index">Back to List</a>
+</div>
+
+
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - BankingEx - <a href="/Home/Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+    
+
+<!-- Visual Studio Browser Link -->
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="a66530e7d3b340e59c3b8c42b45ea619" data-requestMappingFromServer="false" data-connectUrl="http://localhost:58568/0adf0548e8fa4c42ae4e85328bd0ffb9/browserLink"></script>
+<!-- End Browser Link -->
+
+<script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
+</html>
