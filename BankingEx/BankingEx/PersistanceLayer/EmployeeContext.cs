@@ -150,5 +150,10 @@ namespace BankingEx.PersistanceLayer
                 }
             }
         }
+
+        internal static List<string> GetUserRolesByUserId(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

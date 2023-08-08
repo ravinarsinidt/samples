@@ -1,11 +1,15 @@
 ﻿using BankingEx.EFModels;
 using BankingEx.EFPersistanceLayer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
 
 namespace BankingEx.Controllers
 {
+    [Authorize(Roles = "Customer")]
     public class CustomerController : Controller
     {
         [HttpGet]
@@ -17,10 +21,17 @@ namespace BankingEx.Controllers
         [HttpPost]
         public IActionResult Create(Customer customer)
         {
-            bool isSuccess = EFCustomerContext.Create(customer);
-            if (isSuccess)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("List");
+                bool isSuccess = EFCustomerContext.Create(customer);
+                if (isSuccess)
+                {
+                    return RedirectToAction("List");
+                }
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Model is not valid.";
             }
 
             return View();
@@ -29,8 +40,15 @@ namespace BankingEx.Controllers
         [HttpGet]
         public IActionResult List()
         {
-            List<Customer> customers = EFCustomerContext.GetCustomers();
-            return View(customers);
+            try
+            {
+                List<Customer> customers = EFCustomerContext.GetCustomers();
+                return View(customers);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         [HttpGet]

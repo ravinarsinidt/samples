@@ -4,9 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace BankingEx.Controllers
 {
+    [Authorize(Roles = "admin, CAU, SAU")]
     public class AccountController : Controller
     {
         [HttpGet]

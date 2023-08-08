@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -26,6 +29,8 @@ namespace BankingEx.EFModels
         [Required]
         [EmailAddress]
         public string City { get; set; }
+        [NotMapped]        
+        public int? Number { get; set; }
 
         public virtual ICollection<Account> Accounts { get; set; }
     }

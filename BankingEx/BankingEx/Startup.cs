@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BankingEx.Middlewares;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace BankingEx
 {
@@ -24,6 +26,17 @@ namespace BankingEx
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option =>
+                {
+                    option.Cookie.Name = ".AudreeTraining";
+                    option.Cookie.MaxAge = TimeSpan.FromMinutes(2);
+                    option.LoginPath = "/login/login";
+                    option.ExpireTimeSpan = TimeSpan.FromMinutes(2);
+                    option.SlidingExpiration = false;
+                    option.LogoutPath = "/login/logout";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,18 +52,21 @@ namespace BankingEx
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseHeaderValidation();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=customer}/{action=List}/{id?}");
+                    pattern: "{controller=Login}/{action=Login}/{id?}");
             });
         }
     }
