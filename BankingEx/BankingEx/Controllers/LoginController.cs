@@ -34,15 +34,6 @@ namespace BankingEx.Controllers
                 List<Claim> claims = new List<Claim>();
                 claims.Add(new Claim(ClaimTypes.Name, loggedInUser.Name));
 
-                if (loggedInUser.UserName == "admin")
-                {
-                    claims.Add(new Claim(ClaimTypes.Role, "Account"));
-                }
-                else
-                {
-                    claims.Add(new Claim(ClaimTypes.Role, "Customer"));
-                }
-
                 ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 ClaimsPrincipal principal = new ClaimsPrincipal(identity);
 

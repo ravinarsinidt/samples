@@ -9,9 +9,10 @@ using System.Data;
 
 namespace BankingEx.Controllers
 {
-    [Authorize(Roles = "admin, CAU, SAU")]
+    [Authorize]
     public class AccountController : Controller
     {
+        [Authorize]
         [HttpGet]
         public IActionResult Create()
         {

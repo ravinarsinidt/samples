@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace BankingEx.Controllers
 {
-    [Authorize(Roles = "Customer")]
+    [Authorize]
     public class CustomerController : Controller
     {
         [HttpGet]
