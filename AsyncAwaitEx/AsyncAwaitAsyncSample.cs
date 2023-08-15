@@ -8,62 +8,82 @@ using System.Threading.Tasks;
 
 namespace AsyncAwaitEx
 {
-    public class AsyncAwaitSyncSample
+    public class AsyncAwaitAsyncSample
     {
-        public static void ProcessCustomerPayments()
+        public static async Task ProcessCustomerPayments()
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            GetDataFromFile();
-            GetDataFromDatabase();
-            Validate();
-            ProcessPayments();
-            SendReport();
+            Task t1 = GetDataFromFile();
+            Task t2 = GetDataFromDatabase();
+            Console.WriteLine("T1 and T2 Completed");
+            await t1;
+            await t2;
+            Task t3 = Validate();
+            await t3;
+            Task t4 = ProcessPayments();
+            Task t5 = SendReport();
+            await t4;
+            await t5;
             stopwatch.Stop();
-            Console.WriteLine("Time Taken : " + (stopwatch.ElapsedMilliseconds/1000));
+            Console.WriteLine("Time Taken : " + (stopwatch.ElapsedMilliseconds));
         }
 
-        public async static Task<string> GetDataFromFile()
+        public static async Task GetDataFromFile()
         {
-            await Task.Run(() =>
+            Task t = Task.Run(() =>
             {
                 Console.WriteLine("Data reading started from File...");
                 Thread.Sleep(5000);
                 Console.WriteLine("Data ready from File.");
+                return "Done";
             });
-            return "File Data";
+
+            return t;
         }
 
-        public static string GetDataFromDatabase()
+        public async static Task GetDataFromDatabase()
         {
-            Console.WriteLine("Data reading started from DB...");
-            Thread.Sleep(5000);
-            Console.WriteLine("Data ready from DB.");
-            return "DB Data";
+            Task t = Task.Run(() =>
+            {
+                Console.WriteLine("Data reading started from DB...");
+                Thread.Sleep(5000);
+                Console.WriteLine("Data ready from DB.");
+                return "DB Data";
+            });
         }
 
-        public static string Validate()
+        public async static Task Validate()
         {
-            Console.WriteLine("Data Validation started..");
-            Thread.Sleep(2000);
-            Console.WriteLine("Data Validation completed");
-            return "Validation Complted";
+            Task.Run(() =>
+            {
+                Console.WriteLine("Data Validation started..");
+                Thread.Sleep(2000);
+                Console.WriteLine("Data Validation completed");
+                return "Validation Complted";
+            });            
         }
 
-        public static string ProcessPayments()
+        public async static Task ProcessPayments()
         {
-            Console.WriteLine("Process Payments started..");
-            Thread.Sleep(10000);
-            Console.WriteLine("Process Payments complted");
-            return "Process complted";
+            Task.Run(() =>
+            {
+                Console.WriteLine("Process Payments started..");
+                Thread.Sleep(10000);
+                Console.WriteLine("Process Payments complted");
+                return "Process complted";
+            });            
         }
 
-        public static string SendReport()
+        public async static Task SendReport()
         {
-            Console.WriteLine("Sending report to customer....");
-            Thread.Sleep(2000);
-            Console.WriteLine("Report sent!");
-            return "Sent REport";
+            Task.Run(() =>
+            {
+                Console.WriteLine("Sending report to customer....");
+                Thread.Sleep(2000);
+                Console.WriteLine("Report sent!");
+                return "Sent REport";
+            });            
         }
     }
 }
