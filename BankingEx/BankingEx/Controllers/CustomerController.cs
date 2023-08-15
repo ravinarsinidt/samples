@@ -1,4 +1,4 @@
-﻿using BankingEx.EFModels;
+﻿using BankingEx.ViewModels;
 using BankingEx.EFPersistanceLayer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
+using BankingEx.Utilities;
+using DataModels = BankingEx.EFModels;
 
 namespace BankingEx.Controllers
 {
@@ -23,7 +25,9 @@ namespace BankingEx.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool isSuccess = EFCustomerContext.Create(customer);
+                //Convert View Model to EF Model
+                DataModels.Customer c = DataMapper.CovertCustomerViewModelToEFModel(customer);
+                bool isSuccess = EFCustomerContext.Create(c);
                 if (isSuccess)
                 {
                     return RedirectToAction("List");

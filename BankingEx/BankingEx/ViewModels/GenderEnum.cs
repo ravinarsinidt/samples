@@ -1,4 +1,4 @@
-﻿namespace BankingEx.Models
+﻿namespace BankingEx.ViewModels
 {
     public enum GenderEnum
     {

@@ -9,6 +9,11 @@ namespace AsyncAwaitEx
     {
         static async Task Main(string[] args)
         {
+            AsyncAwaitAsyncSample.ProcessCustomerPayments();
+        }
+
+        static async Task TeaSample(string[] args)
+        {
             Program p = new Program();
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();

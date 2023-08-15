@@ -1,7 +1,9 @@
 ﻿using AudreeBankApi.EFDataContext;
+using AudreeBankApi.Persistance;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace AudreeBankApi.Controllers
 {
@@ -10,16 +12,17 @@ namespace AudreeBankApi.Controllers
     public class CustomerController : ControllerBase
     {
         [HttpPost]
-        public IActionResult Post(Customer customer)
+        public IActionResult Post(Customer customer, int x)
         {
-            string connectionString = "Server=RAVINARSINI;Database=NewBank;User Id=sa;Password=adminadmin;encrypt=false";
-            DbContextOptionsBuilder<AudreeBankData> optionsBuilder = new DbContextOptionsBuilder<AudreeBankData>();
-            optionsBuilder.UseSqlServer(connectionString);
-            AudreeBankData ctx = new AudreeBankData(optionsBuilder.Options);
+            bool result = CustomerPersistance.Create(customer);
+            return Created("", result);
+        }
 
-            ctx.Customers.Add(customer);
-            ctx.SaveChanges();
-            return Ok();
+        [HttpGet]
+        public IActionResult Get()
+        {
+            List<Customer> result = CustomerPersistance.Get();
+            return Ok(result);
         }
     }
 }
