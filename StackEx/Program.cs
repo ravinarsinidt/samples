@@ -14,6 +14,7 @@ namespace StackEx
                 stack.Push(100);
                 stack.Push(-1);
                 stack.Push(-1);
+                stack.Push(-1);
                 stack.Push(400);
                 stack.Push(500);
                 stack.Push(600);
