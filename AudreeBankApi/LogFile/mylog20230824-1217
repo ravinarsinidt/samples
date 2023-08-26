@@ -1,0 +1,7 @@
+2023-08-24 12:17:27,253 INFO  Microsoft.Hosting.Lifetime.OnApplicationStarted [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+2023-08-24 12:17:27,430 INFO  Microsoft.Hosting.Lifetime.OnApplicationStarted [0] - MESSAGE: Hosting environment: Development
+2023-08-24 12:17:27,434 INFO  Microsoft.Hosting.Lifetime.OnApplicationStarted [0] - MESSAGE: Content root path: D:\Training\AudreeRepo\samples\AudreeBankApi\AudreeBankApi
+2023-08-24 12:17:38,711 INFO  AudreeBankApi.Controllers.CustomerController.Get [37] - MESSAGE: LogInformation: Reading data from DB.
+2023-08-24 12:17:38,744 WARN  AudreeBankApi.Controllers.CustomerController.Get [38] - MESSAGE: LogWarning: Reading data from DB.
+2023-08-24 12:17:38,749 ERROR AudreeBankApi.Controllers.CustomerController.Get [40] - MESSAGE: LogError: Reading data from DB.
+2023-08-24 12:17:38,754 FATAL AudreeBankApi.Controllers.CustomerController.Get [41] - MESSAGE: LogCritical: Reading data from DB.

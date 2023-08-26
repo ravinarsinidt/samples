@@ -1,4 +1,4 @@
-﻿namespace AudreeBankApi.EFDataContext
+﻿namespace AudreeBankApi.PersistanceLayer.EFDataContext
 {
     public class Transaction
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace AudreeBankApi.EFDataContext
+namespace AudreeBankApi.PersistanceLayer.EFDataContext
 {
     public class AudreeBankData : DbContext
     {

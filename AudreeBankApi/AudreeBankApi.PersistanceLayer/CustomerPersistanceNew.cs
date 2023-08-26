@@ -1,13 +1,13 @@
-﻿using AudreeBankApi.EFDataContext;
+﻿using AudreeBankApi.PersistanceLayer.EFDataContext;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AudreeBankApi.Persistance
+namespace AudreeBankApi.PersistanceLayer
 {
-    public class CustomerPersistance
+    public class CustomerPersistanceNew : ICustomerPersistance
     {
-        public static bool Create(Customer customer)
+        public bool Create(Customer customer)
         {
             string connection = "Server=RAVINARSINI;Database=NewBank;User Id=sa;Password=adminadmin;encrypt=false";
             try
@@ -25,7 +25,7 @@ namespace AudreeBankApi.Persistance
             }
         }
 
-        public static List<Customer> Get()
+        public List<Customer> Get()
         {
             string connection = "Server=RAVINARSINI;Database=NewBank;User Id=sa;Password=adminadmin;encrypt=false";
             try

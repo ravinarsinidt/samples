@@ -1,4 +1,6 @@
-using AudreeBankApi.EFDataContext;
+using AudreeBankApi.PersistanceLayer;
+using AudreeBankApi.PersistanceLayer.EFDataContext;
+using log4net;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +30,6 @@ namespace AudreeBankApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -37,6 +38,8 @@ namespace AudreeBankApi
 
             services.AddDbContext<AudreeBankData>(options =>
                                                 options.UseSqlServer("Server=RAVINARSINI;Database=NewBank;User Id=sa;Password=adminadmin;encrypt=false"));
+            
+            services.AddTransient<ICustomerPersistance, CustomerPersistanceNew>(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +52,7 @@ namespace AudreeBankApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AudreeBankApi v1"));
             }
 
+           
             app.UseHttpsRedirection();
 
             app.UseRouting();

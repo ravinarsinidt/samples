@@ -6,9 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudreeBankApi", "AudreeBankApi\AudreeBankApi.csproj", "{E2AE5F58-7817-4194-8940-CAA653F564E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D17598EA-E345-4BCD-92DF-4C063A60FA42}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudreeBankApi.PersistanceLayer", "AudreeBankApi.PersistanceLayer\AudreeBankApi.PersistanceLayer.csproj", "{70335078-1CF1-44BB-9759-308D573FD4F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCalculator", "MyCalculator\MyCalculator.csproj", "{CF4E82CE-E643-4A2B-910E-2D2488FE9755}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorTest", "CalculatorTest\CalculatorTest.csproj", "{3351E695-2B5E-4774-87E0-90C7E3D11F93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudreeBankApi.Tests", "AudreeBankApi.Tests\AudreeBankApi.Tests.csproj", "{FA8D2C63-2FC3-48D7-919D-B87C077BD7F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +25,22 @@ Global
 		{E2AE5F58-7817-4194-8940-CAA653F564E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2AE5F58-7817-4194-8940-CAA653F564E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2AE5F58-7817-4194-8940-CAA653F564E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70335078-1CF1-44BB-9759-308D573FD4F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70335078-1CF1-44BB-9759-308D573FD4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70335078-1CF1-44BB-9759-308D573FD4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70335078-1CF1-44BB-9759-308D573FD4F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF4E82CE-E643-4A2B-910E-2D2488FE9755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4E82CE-E643-4A2B-910E-2D2488FE9755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4E82CE-E643-4A2B-910E-2D2488FE9755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4E82CE-E643-4A2B-910E-2D2488FE9755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3351E695-2B5E-4774-87E0-90C7E3D11F93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3351E695-2B5E-4774-87E0-90C7E3D11F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3351E695-2B5E-4774-87E0-90C7E3D11F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3351E695-2B5E-4774-87E0-90C7E3D11F93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA8D2C63-2FC3-48D7-919D-B87C077BD7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA8D2C63-2FC3-48D7-919D-B87C077BD7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA8D2C63-2FC3-48D7-919D-B87C077BD7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA8D2C63-2FC3-48D7-919D-B87C077BD7F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

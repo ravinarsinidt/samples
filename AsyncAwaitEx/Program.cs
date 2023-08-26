@@ -9,7 +9,7 @@ namespace AsyncAwaitEx
     {
         static async Task Main(string[] args)
         {
-            AsyncAwaitAsyncSample.ProcessCustomerPayments();
+            await AsyncAwaitAsyncSample.ProcessCustomerPayments();
         }
 
         static async Task TeaSample(string[] args)
