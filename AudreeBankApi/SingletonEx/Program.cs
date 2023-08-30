@@ -8,11 +8,7 @@ namespace SingletonEx
         {
             Cart cart = new Cart { Item = "TV", Count = 4 };
             cart.PrintCart();
-            Order order = new Order { Cart = cart, Address = "Hyderabad", Number = 1 };
-            order.PlaceOrder();
-            string item = Warehouse.GetItems(order);
-            string packedItem = Package.PackItems(item);
-            Shipment.ShipPackage(packedItem, order.Address);
+            OrderFacade.PlaceOrderAndShip(cart, "vizag");
         }
 
         private static void FactoryTest()

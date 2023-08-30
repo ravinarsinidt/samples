@@ -40,7 +40,7 @@ namespace BankingEx.EFPersistanceLayer
                 optionsBuilder.UseSqlServer(connectionString);
 
                 AudreeBankContext db = new AudreeBankContext(optionsBuilder.Options);
-                List <Customer> customers = db.Customers.ToList();
+                List<Customer> customers = db.Customers.ToList();
                 return customers;
 
             }

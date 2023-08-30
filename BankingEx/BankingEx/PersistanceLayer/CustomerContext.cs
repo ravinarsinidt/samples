@@ -2,6 +2,7 @@
 using System;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
+using BankingEx.EFModels;
 
 namespace BankingEx.PersistanceLayer
 {
@@ -13,9 +14,9 @@ namespace BankingEx.PersistanceLayer
 
             try
             {
-                string dbDateFormat = customer.DoB.ToString("yyyy-MM-dd");
+                string dbDateFormat = customer.Dob.ToString("yyyy-MM-dd");
                 string insertCommand = $"INSERT INTO dbo.Customer(name, Dobs, PanNumber, City) " +
-                                        $"VALUES('{customer.Name}', '{dbDateFormat}', '{customer.PAN}'" +
+                                        $"VALUES('{customer.Name}', '{dbDateFormat}', '{customer.PanNumber}'" +
                                         $", '{customer.City}')";
                 SqlCommand command = new SqlCommand(insertCommand, connection);
                 connection.Open();
@@ -58,8 +59,8 @@ namespace BankingEx.PersistanceLayer
                     Customer customer = new Customer();
                     customer.Id = int.Parse(resultReader["Id"].ToString());
                     customer.Name = resultReader["Name"].ToString();
-                    customer.DoB = DateTime.Parse(resultReader["Dob"].ToString());
-                    customer.PAN = resultReader["PanNumber"].ToString();
+                    customer.Dob = DateTime.Parse(resultReader["Dob"].ToString());
+                    customer.PanNumber = resultReader["PanNumber"].ToString();
                     customer.City = resultReader["City"].ToString();
 
                     customers.Add(customer);

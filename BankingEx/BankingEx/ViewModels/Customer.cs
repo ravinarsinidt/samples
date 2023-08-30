@@ -31,6 +31,7 @@ namespace BankingEx.ViewModels
         public string City { get; set; }
         [NotMapped]        
         public int? Number { get; set; }
+        public string State { get; set; }
 
         public virtual ICollection<Account> Accounts { get; set; }
     }

@@ -10,6 +10,7 @@ using System;
 using BankingEx.PersistanceLayer;
 using BankingEx.Models;
 using Microsoft.AspNetCore.Http;
+using BankingEx.EFModels;
 
 namespace BankingEx.Controllers
 {

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
+using BankingEx.EFModels;
 
 namespace BankingEx.EFPersistanceLayer
 {

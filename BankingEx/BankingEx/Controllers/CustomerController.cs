@@ -17,6 +17,17 @@ namespace BankingEx.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            List<string> states = new List<string>
+            {
+                "TS",
+                "AP",
+                "TN",
+                "MH",
+                "KT",
+                "MP"
+            };
+
+            ViewBag.States = states;
             return View();
         }
 
@@ -46,7 +57,7 @@ namespace BankingEx.Controllers
         {
             try
             {
-                List<Customer> customers = EFCustomerContext.GetCustomers();
+                List<DataModels.Customer> customers = EFCustomerContext.GetCustomers();
                 return View(customers);
             }
             catch (Exception)
@@ -59,34 +70,15 @@ namespace BankingEx.Controllers
         [AutoValidateAntiforgeryToken]
         public IActionResult Edit(int id)
         {
-            Customer customer = EFCustomerContext.GetCustomerById(id);
+            DataModels.Customer customer = EFCustomerContext.GetCustomerById(id);
             return View(customer);
         }
 
-        [HttpPost]
-        [AutoValidateAntiforgeryToken]
-        public IActionResult Edit(Customer customer)
-        {
-            try
-            {
-                bool success = EFCustomerContext.UpdateCustomer(customer);
-                if (success)
-                {
-                    return RedirectToAction("List");
-                }
-                ViewBag.ErrorMessage = "Record not updated. Pls try again.";
-            }
-            catch (Exception ex)
-            {
-                ViewBag.ErrorMessage = "Record not updated. Exception : " + ex.Message;
-            }
-            return View(customer);
-        }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            Customer customer = EFCustomerContext.GetCustomerById(id);
+            DataModels.Customer customer = EFCustomerContext.GetCustomerById(id);
             return View(customer);
         }
 
@@ -104,7 +96,7 @@ namespace BankingEx.Controllers
         [HttpGet]
         public IActionResult Details(int id)
         {
-            Customer customer = EFCustomerContext.GetCustomerById(id);
+            DataModels.Customer customer = EFCustomerContext.GetCustomerById(id);
             return View(customer);
         }
     }
