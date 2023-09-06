@@ -99,5 +99,28 @@ namespace BankingEx.Controllers
             DataModels.Customer customer = EFCustomerContext.GetCustomerById(id);
             return View(customer);
         }
+
+        [HttpGet]
+        public IActionResult GetCities(string cityId)
+        {
+            List<string> cities = new List<string>();
+            if(cityId == "TS")
+            {
+                cities.Add("HYD");
+                cities.Add("KMM");
+            }
+            else if(cityId == "AP")
+            {
+                cities.Add("VIZ");
+                cities.Add("VIJA");
+            }
+            else
+            {
+                cities.Add("City1");
+                cities.Add("City2");
+            }
+
+            return Json(cities);
+        }
     }
 }

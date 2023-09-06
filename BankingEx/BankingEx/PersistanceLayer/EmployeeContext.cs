@@ -86,12 +86,18 @@ namespace BankingEx.PersistanceLayer
             Employee employee = null;
             try
             {
-                string selectCommand = $"SELECT * FROM dbo.Employee" +
-                    $" WHERE UserName = '{userName}' AND Password = '{password}'";
+                string selectCommand = "SELECT * FROM dbo.Employee WHERE UserName = @p1 AND Password = @p2";
+
+                //string selectCommand = $"SELECT * FROM dbo.Employee" +
+                //    $" WHERE UserName = '{userName}' AND Password = '{password}'";
 
                 SqlCommand command = new SqlCommand(selectCommand, connection);
+                command.Parameters.Add(new SqlParameter("@p1", userName));
+                command.Parameters.Add(new SqlParameter("@p2", password));
+
                 connection.Open();
                 SqlDataReader resultReader = command.ExecuteReader();
+                
                 while (resultReader.Read())
                 {
                     employee = new Employee();
