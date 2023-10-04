@@ -11,6 +11,7 @@ using BankingEx.PersistanceLayer;
 using BankingEx.Models;
 using Microsoft.AspNetCore.Http;
 using BankingEx.EFModels;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 
 namespace BankingEx.Controllers
 {
@@ -34,9 +35,11 @@ namespace BankingEx.Controllers
             {
                 List<Claim> claims = new List<Claim>();
                 claims.Add(new Claim(ClaimTypes.Name, loggedInUser.Name));
+                claims.Add(new Claim(ClaimTypes.Role, "R1"));
 
                 ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 ClaimsPrincipal principal = new ClaimsPrincipal(identity);
+                
 
                 AuthenticationProperties authProperties = new AuthenticationProperties
                 {

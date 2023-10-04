@@ -16,8 +16,8 @@ namespace BankingEx.Middlewares
 
         public Task Invoke(HttpContext httpContext)
         {
-            string headerValue = httpContext.Request.Headers["Sec-Ch-Ua-Platform"][0];
-            if (string.Compare(headerValue, "\"Windows\"", true) == 0)
+            string headerValue = httpContext.Request.Headers["MyItem"][0];
+            if (string.Compare(headerValue, "\"Ravi\"", true) == 0)
             {
                 return _next(httpContext);
             }

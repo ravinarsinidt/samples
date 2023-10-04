@@ -1,0 +1,2 @@
+2023-09-07 10:39:36,499 INFO  AudreeBankApi.Controllers.CustomerController.Get [39] - MESSAGE: LogInformation: Reading data from DB started.
+2023-09-07 10:39:36,528 INFO  AudreeBankApi.Controllers.CustomerController.Get [41] - MESSAGE: LogInformation: Reading data Completed.

@@ -12,7 +12,6 @@ namespace BankingEx.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        [Authorize]
         [HttpGet]
         public IActionResult Create()
         {
@@ -95,6 +94,12 @@ namespace BankingEx.Controllers
             }
 
             return View(account);
+        }
+
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return Content("No Role Found!");
         }
     }
 }

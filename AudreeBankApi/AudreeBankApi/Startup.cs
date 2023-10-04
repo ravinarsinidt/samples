@@ -36,6 +36,16 @@ namespace AudreeBankApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AudreeBankApi", Version = "v1" });
             });
 
+            string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("https://localhost:44394");
+                                  });
+            });
+
             services.AddDbContext<AudreeBankData>(options =>
                                                 options.UseSqlServer("Server=RAVINARSINI;Database=NewBank;User Id=sa;Password=adminadmin;encrypt=false"));
             
@@ -54,6 +64,7 @@ namespace AudreeBankApi
 
            
             app.UseHttpsRedirection();
+            app.UseCors("_myAllowSpecificOrigins");
 
             app.UseRouting();
 

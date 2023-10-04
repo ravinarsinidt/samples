@@ -32,6 +32,7 @@ namespace BankingEx.Controllers
         }
 
         [HttpPost]
+        [AutoValidateAntiforgeryToken]
         public IActionResult Create(Customer customer)
         {
             if (ModelState.IsValid)
@@ -66,7 +67,6 @@ namespace BankingEx.Controllers
             }
         }
 
-        [HttpGet]
         [AutoValidateAntiforgeryToken]
         public IActionResult Edit(int id)
         {
@@ -74,6 +74,13 @@ namespace BankingEx.Controllers
             return View(customer);
         }
 
+        [HttpPost]
+        public IActionResult Edit(Customer c)
+        {
+            DataModels.Customer customer = DataMapper.CovertCustomerViewModelToEFModel(c);
+            bool success = EFCustomerContext.UpdateCustomer(customer);
+            return RedirectToAction("List");
+        }
 
         [HttpGet]
         public IActionResult Delete(int id)
@@ -85,7 +92,7 @@ namespace BankingEx.Controllers
         [HttpPost]
         public IActionResult Delete(Customer customer)
         {
-            bool isDeleted = EFCustomerContext.Delete(customer.Id);
+            bool isDeleted = EFCustomerContext.Delete(customer.Id.Value);
             if (isDeleted)
             {
                 ViewBag.ErrorMessage = "Record not deleted! Please try again.";

@@ -60,7 +60,7 @@ namespace BankingEx
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseHeaderValidation();
+            app.UseNotFoundMiddleware();
 
             app.UseEndpoints(endpoints =>
             {

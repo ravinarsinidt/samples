@@ -9,12 +9,12 @@ namespace BankingEx.Utilities
         {
             DataModels.Customer result = new DataModels.Customer();
 
-            result.Id = customer.Id;
+            result.Id = customer.Id.Value;
             result.Name = customer.Name;
             result.PanNumber = customer.PanNumber;
             result.Number = customer.Number;
-            result.Dob = customer.Dob;
-            result.City = customer.City;
+            result.Dob = customer.Dob.Value;
+            result.City = customer.City;    
 
             return result;
         }

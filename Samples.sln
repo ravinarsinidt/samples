@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33529.622
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples", "Samples\Samples.csproj", "{B4ABC25D-FBB6-4609-9C7D-195231BD5B81}"
 EndProject
@@ -29,9 +29,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadEx", "ThreadEx\Thread
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwaitEx", "AsyncAwaitEx\AsyncAwaitEx.csproj", "{61A60215-2EFC-403B-B728-D5A9A5EE4992}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesEx", "DelegatesEx\DelegatesEx.csproj", "{35317D49-713B-4D81-A930-8DCADF79E848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesEx", "DelegatesEx\DelegatesEx.csproj", "{35317D49-713B-4D81-A930-8DCADF79E848}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqEx", "LinqEx\LinqEx.csproj", "{111BBED0-550E-45AB-BE58-F3E2901E90C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqEx", "LinqEx\LinqEx.csproj", "{111BBED0-550E-45AB-BE58-F3E2901E90C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateEx2", "DelegateEx2\DelegateEx2.csproj", "{C7D42049-A022-46FB-A0B2-6D2F1E454954}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverSizeEx", "ReverSizeEx\ReverSizeEx.csproj", "{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +103,14 @@ Global
 		{111BBED0-550E-45AB-BE58-F3E2901E90C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{111BBED0-550E-45AB-BE58-F3E2901E90C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{111BBED0-550E-45AB-BE58-F3E2901E90C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D42049-A022-46FB-A0B2-6D2F1E454954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D42049-A022-46FB-A0B2-6D2F1E454954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D42049-A022-46FB-A0B2-6D2F1E454954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D42049-A022-46FB-A0B2-6D2F1E454954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
