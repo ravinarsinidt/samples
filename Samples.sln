@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqEx", "LinqEx\LinqEx.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateEx2", "DelegateEx2\DelegateEx2.csproj", "{C7D42049-A022-46FB-A0B2-6D2F1E454954}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverSizeEx", "ReverSizeEx\ReverSizeEx.csproj", "{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReverSizeEx", "ReverSizeEx\ReverSizeEx.csproj", "{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAsyncEx", "SimpleAsyncEx\SimpleAsyncEx.csproj", "{DC2040FB-FF84-4E5B-BA42-AED1D53DE136}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C63FE10-BCAE-4C7B-B645-71708A3CA89E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2040FB-FF84-4E5B-BA42-AED1D53DE136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2040FB-FF84-4E5B-BA42-AED1D53DE136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2040FB-FF84-4E5B-BA42-AED1D53DE136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2040FB-FF84-4E5B-BA42-AED1D53DE136}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

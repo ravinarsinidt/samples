@@ -9,7 +9,7 @@ namespace ReverSizeEx
         static void Main(string[] args)
         {
             int[,] reverData = new int[,] {{ 1, 1, 0, 0, 0, 0, 0 }, 
-                                           { 0, 1, 1, 0, 0, 1, 0 }, 
+                                           { 0, 1, 0, 0, 0, 1, 0 }, 
                                            { 0, 0, 0, 1, 0, 1, 0 }, 
                                            { 0, 0, 0, 0, 1, 0, 0 } 
                                           };
@@ -49,8 +49,6 @@ namespace ReverSizeEx
         public static int ComputeSizeOfCurrentRever(int[,] matrix, Stack<int[]> coordinatesOfSameRever, bool[,] visitedCells)
         {
             int size = 0;
-            int height = matrix.GetLength(0);
-            int width = matrix.GetLength(1);
 
             while (coordinatesOfSameRever.Count > 0)
             {
@@ -61,67 +59,27 @@ namespace ReverSizeEx
 
                 // UP
                 AddCellsForReverLengthCalculation(row - 1, column, coordinatesOfSameRever, ref visitedCells, matrix);
-                //if ((row - 1) >= 0 && !visitedCells[row - 1, col] && matrix[row - 1, col] == 1)
-                //{
-                //    visitedCells[row - 1, col] = true;
-                //    coordinatesOfSameRever.Push(new int[2] {row -1 , col});
-                //}
-
+                
                 //RIGHT
                 AddCellsForReverLengthCalculation(row, column+1, coordinatesOfSameRever, ref visitedCells, matrix);
-                //if ((col + 1) < width && !visitedCells[row, col + 1] && matrix[row, col + 1] == 1)
-                //{
-                //    visitedCells[row, col + 1] = true;
-                //    coordinatesOfSameRever.Push(new int[2] { row, col + 1 });
-                //}
 
                 //Down
                 AddCellsForReverLengthCalculation(row + 1, column, coordinatesOfSameRever, ref visitedCells, matrix);
-                //if ((row + 1) < height && !visitedCells[row + 1, col] && matrix[row + 1, col] == 1)
-                //{
-                //    visitedCells[row + 1, col] = true;
-                //    coordinatesOfSameRever.Push(new int[2] { row + 1, col });
-                //}
 
                 //LEFT
                 AddCellsForReverLengthCalculation(row, column - 1, coordinatesOfSameRever, ref visitedCells, matrix);
-                //if ((col - 1) >= 0 && !visitedCells[row, col - 1] && matrix[row, col - 1] == 1)
-                //{
-                //    visitedCells[row, col - 1] = true;
-                //    coordinatesOfSameRever.Push(new int[2] { row, col - 1 });
-                //}
 
                 //Left Up
                 AddCellsForReverLengthCalculation(row - 1, column - 1, coordinatesOfSameRever, ref visitedCells, matrix);
-                //if (((col - 1) >= 0 && (row - 1) >= 0) && !visitedCells[row - 1, col - 1] && matrix[row - 1 , col - 1] == 1)
-                //{
-                //    visitedCells[row - 1, col - 1] = true;
-                //    coordinatesOfSameRever.Push(new int[2] { row - 1, col - 1 });
-                //}
 
                 //Right Up
                 AddCellsForReverLengthCalculation(row - 1, column + 1, coordinatesOfSameRever, ref visitedCells, matrix);
-                //if (((col + 1) < width && (row - 1) >= 0) && !visitedCells[row - 1, col + 1] && matrix[row - 1, col + 1] == 1)
-                //{
-                //    visitedCells[row - 1, col + 1] = true;
-                //    coordinatesOfSameRever.Push(new int[2] { row - 1, col + 1 });
-                //}
 
                 //Left Down
                 AddCellsForReverLengthCalculation(row + 1, column - 1, coordinatesOfSameRever, ref visitedCells, matrix);
-                //if (((col - 1) >= 0 && (row + 1) < height) && !visitedCells[row + 1, col - 1] && matrix[row + 1, col - 1] == 1)
-                //{
-                //    visitedCells[row +1, col - 1] = true;
-                //    coordinatesOfSameRever.Push(new int[2] { row + 1, col - 1 });
-                //}
 
                 //Right Down
                 AddCellsForReverLengthCalculation(row + 1, column + 1, coordinatesOfSameRever, ref visitedCells, matrix);
-                //if (((col + 1) < width && (row + 1) < height) && !visitedCells[row + 1, col + 1] && matrix[row + 1, col + 1] == 1)
-                //{
-                //    visitedCells[row + 1, col + 1] = true;
-                //    coordinatesOfSameRever.Push(new int[2] { row + 1, col + 1 });
-                //}
             }
 
             return size;
